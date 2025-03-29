@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>jquery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<h2 class="root"></h2>
+</body>
+<script>
+	let url = "http://localhost:5000/api/name";
+	$.ajax({
+		method: "GET",
+		url: url,
+		success: (data) => {
+			$('.root').html(data);
+		},
+	});
+</script>
+
+</html>

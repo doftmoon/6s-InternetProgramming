@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>02-05</title>
+</head>
+
+<body>
+	<h2 id='root'>
+	</h2>
+	<script>
+		async function getData() {
+			let url = 'http://localhost:5000/api/name';
+			try {
+				const response = await fetch(url);
+				if (!response.ok) {
+					throw new Error(`Response status: ${response.status}`)
+				}
+				let text = await response.text();
+				document.getElementById('root').innerHTML = text;
+			}
+			catch (e) {
+				console.error(e.message);
+			}
+		}
+		getData();
+	</script>
+</body>
+
+</html>
